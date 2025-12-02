@@ -20,6 +20,7 @@
 \usepackage{titlesec} % per formattare le sezioni
 \usepackage{float} % per la tabella del glossario
 \usepackage{longtable} % per fare in modo che la tabella sia più lunga di una pagina
+\newcommand{\termdefinition}[1]{\subsection*{#1}} % IMPORTANTE: Va usato per definire i termini per il funzionamento della action
 \geometry{margin=2.5cm}
 
 \setlength{\parindent}{0pt}
@@ -114,58 +115,58 @@
 
 \section{A}
 
-\subsection*{Agile development}
+\termdefinition{Agile development}
 Metodo per lo sviluppo sw ideato per produrre sw utile nel minor tempo possibile. Il sistema è sviluppato attraverso una serie di incrementi a cui partecipano anche gli stakeholders e gli utenti finali per una maggiore comunicazione in fase di sviluppo. I risultati di ogni incremento vengono utilizzati come base per la pianificazione del prossimo.  
 Attività centrali sono: il \textbf{design} e \textbf{l'implementazione}.  
 La stesura di un documento dei requisiti è superflua in quanto i requisiti cambiano così velocemente che il documento è obsoleto non appena viene scritto.
 
-\subsection*{API}
+\termdefinition{API}
 Interfaccia che consente la comunicazione tra componenti o servizi.
 
-\subsection*{Architettura}
+\termdefinition{Architettura}
 Organizzazione generale del sistema e dei suoi componenti.
 
 % ==============================
 \section{B}
 
-\subsection*{Backlog}
+\termdefinition{Backlog}
 Elenco prioritario delle funzionalità, bug e attività da svolgere.
 
-\subsection*{Baseline}
+\termdefinition{Baseline}
 Versione approvata di un prodotto di lavoro (di progetto) che può essere modificato solo attraverso procedure formali di controllo delle modifiche.
 
-\subsection*{Bug}
+\termdefinition{Bug}
 Difetto da controllare.
 
 % ==============================
 \section{C}
 
-\subsection*{Capitolato}
+\termdefinition{Capitolato}
 Documento che contiene le specifiche di un progetto software. Viene redatto dal proponente e presentato ai fornitori interessati a partecipare all'appalto.  
 Descrive i requisiti lato bisogno (requisiti utente).
 
-\subsection*{Committente}
+\termdefinition{Committente}
 Colui che paga il prodotto. Di solito (ma non necessariamente) è colui che decide i requisiti.
 
-\subsection*{Componente}
+\termdefinition{Componente}
 Unità software con responsabilità ben definite e interfacce pubbliche.
 
-\subsection*{Contratto}
+\termdefinition{Contratto}
 Documento (legale) stilato tra committente e fornitore.
 
-\subsection*{Click}
+\termdefinition{Click}
 L'azione di premere e rilasciare rapidamente un pulsante del mouse (o un'area equivalente su un touchpad) per attivare un comando, selezionare un oggetto o seguire un collegamento ipertestuale su un'interfaccia grafica.
 
 % ==============================
 \section{D}
 
-\subsection*{Database}
+\termdefinition{Database}
 Sistema di memorizzazione dei dati e la sua struttura definita.
 
-\subsection*{Deployment}
+\termdefinition{Deployment}
 Processo di pubblicazione del software in un ambiente esecutivo.
 
-\subsection*{Documento analisi dei requisiti}
+\termdefinition{Documento analisi dei requisiti}
 Stabilisce esattamente cosa deve essere implementato nel sistema, cioè elenca i requisiti lato soluzione (requisiti software).  
 Può essere parte del contatto con l’acquirente.  
 Può essere soggetto a modifiche durante lo sviluppo del prodotto sw.
@@ -173,7 +174,7 @@ Può essere soggetto a modifiche durante lo sviluppo del prodotto sw.
 % ==============================
 \section{E}
 
-\subsection*{Extreme programming (XP)}
+\termdefinition{Extreme programming / XP}
 Tecnica di sviluppo software.  
 I requisiti non sono documenti formali:
 \begin{itemize}
@@ -193,25 +194,25 @@ Elenco termini utilizzati dal gruppo.
 % ==============================
 \section{J}
 
-\subsection*{JSON}
+\termdefinition{JSON}
 Formato per lo scambio di dati tra client e server.
 
 % ==============================
 \section{L}
 
-\subsection*{Life cycle}
+\termdefinition{Life cycle}
 Gli stati che il prodotto software assume da concezione, all’uso fino al ritiro.  
 Si riferisce alla completa durata dello sviluppo del prodotto, dal concepimento al ritiro (=fine), che deve essere garantita.  
 È composto da stati in cui si ha una certa sequenza di passaggi da seguire. La transizione da uno stato all’altro avviene come conseguenza dell’esecuzione di un’attività.  
 In seguito al ritiro il prodotto può essere rimesso in vita, per questo viene indicato con ciclo.
 
-\subsection*{Licenza}
+\termdefinition{Licenza}
 Condizioni legali che regolano l’uso e la distribuzione del software.
 
 % ==============================
 \section{M}
 
-\subsection*{Milestone}
+\termdefinition{Milestone}
 Strumento utilizzato nella gestione di progetto per fissare una data di calendario che descrive degli obiettivi che portano un avanzamento nello sviluppo di progetto.  
 Ogni milestone deve essere:
 \begin{itemize}
@@ -222,19 +223,19 @@ Ogni milestone deve essere:
 \item dimostrabile dagli stakeholders
 \end{itemize}
 
-\subsection*{Model}
+\termdefinition{Model}
 Insieme di specifiche che descrivono un fenomeno d’interesse.
 
-\subsection*{MVP}
+\termdefinition{MVP}
 Versione minima del prodotto che permette di validare l’ipotesi principale.
 
 % ==============================
 \section{P}
 
-\subsection*{PB}
+\termdefinition{PB}
 Versione approvata del prodotto pronta al rilascio o alla validazione.
 
-\subsection*{Piano di progetto}
+\termdefinition{Piano di progetto}
 Documento ufficiale di tipo esterno, soggetto ad approvazioni, con il quale si descrivono gli obiettivi di progetto e gli elementi necessari al loro raggiungimento.  
 Si vedono le risorse disponibili e le loro assegnazioni alle attività con scansione nel tempo.  
 Principalmente è scomposto in:
@@ -253,98 +254,95 @@ Struttura tipica del PdP:
 \item Meccanismo di controllo e rendicontazione
 \end{itemize}
 
-\subsection*{Piano di qualifica}
+\termdefinition{Piano di qualifica}
 Documento incrementale di tipo esterno che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto.  
 Contiene una descrizione dettagliata delle strategie di testing (verifica), delle metriche di valutazione e dei criteri di accettazione del prodotto finale.  
 L’obiettivo principale è garantire che il prodotto soddisfi gli standard di qualità prefissati e che il processo di sviluppo segua procedure coerenti ed efficaci.  
 Per ogni passo fatto in analisi o altro è necessario preparare test e tracciamenti per non lasciare indietro nulla.
 
-\subsection*{PoC}
+\termdefinition{PoC}
 Prototipo o esperimento usato per dimostrare la fattibilità di una soluzione.
 
-\subsection*{Process}
+\termdefinition{Process}
 Un insieme strutturato di attività, metodi, pratiche e trasformazioni utilizzate per sviluppare, manutenere e gestire un prodotto software o un sistema. Definisce cosa deve essere fatto, chi lo fa, quando e come, per raggiungere un obiettivo specifico.
 
-\subsection*{Project}
+\termdefinition{Project}
 È un insieme ordinato di attività sviluppate sulla base dei processi di ciclo di vita che soddisfano gli obiettivi dati.
 \begin{itemize}
 \item Le attività sono suddivise in compiti assegnabili a singoli individui.
 \item Le attività sono pianificate prima di essere svolte.
 \end{itemize}
 
-\subsection*{Prototipo}
+\termdefinition{Prototipo}
 Versione preliminare per testare design o comportamenti prima dello sviluppo completo.
 
-\subsection*{Pull Request / Merge Request}
+\termdefinition{Pull Request}
 Procedura per proporre e rivedere modifiche prima dell’integrazione.
 
 % ==============================
 \section{R}
 
-\subsection*{Repository / Repo}
+\termdefinition{Repository}
 Archivio centralizzato dove viene conservato e gestito il codice sorgente del progetto.
 
-\subsection*{Repository / Branch}
-Archivio del codice sorgente e linee di sviluppo parallele.
-
-\subsection*{Requisito}
+\termdefinition{Requisito}
 Condizione o capacità che il sistema deve soddisfare.
 
-\subsection*{Requisito funzionale}
+\termdefinition{Requisito funzionale}
 Funzionalità che il sistema deve offrire.
 
-\subsection*{Requisito non funzionale}
+\termdefinition{Requisito non funzionale}
 Vincolo di qualità (prestazioni, sicurezza, usabilità, manutentibilità).
 
-\subsection*{Requisito utente}
+\termdefinition{Requisito utente}
 Requisiti astratti di alto livello.  
 Dichiarazioni in linguaggio naturale (e anche diagrammi) dei servizi che il sistema dovrebbe fornire agli utenti e dei vincoli che deve rispettare.  
 Possono variare da dichiarazioni generali a descrizioni dettagliate.
 
-\subsection*{Requisito software}
+\termdefinition{Requisito software}
 Descrizioni dettagliate delle funzioni, servizi e vincoli di sistema, inseriti nel documento di analisi dei requisiti.
 
-\subsection*{RTB}
+\termdefinition{RTB}
 Insieme dei requisiti approvati e della loro tracciabilità.
 
 % ==============================
 \section{S}
 
-\subsection*{Sprint}
+\termdefinition{Sprint}
 Iterazione di lavoro con obiettivi definiti (2 settimane).
 
-\subsection*{Stakeholder}
+\termdefinition{Stakeholder}
 Tutti coloro che a vario titolo hanno influenza sul prodotto e sul progetto: utenti, committente, fornitore, regolatori.
 
 % ==============================
 \section{T}
 
-\subsection*{Task}
+\termdefinition{Task}
 Attività da svolgere.
 
-\subsection*{Technology baseline}
+\termdefinition{Technology baseline}
 Documento di quello che si dovrebbe implementare.
 
-\subsection*{Test unitario}
+\termdefinition{Test unitario}
 Verifica automatizzata di singole unità di codice.
 
-\subsection*{Test di integrazione}
+\termdefinition{Test di integrazione}
 Verifica delle interazioni tra più componenti o servizi.
 
-\subsection*{Test-driven development}
+\termdefinition{Test-driven development}
 Vengono scritti prima i test e poi il codice. Scrivendo i test si definisce implicitamente l’interfaccia e le specifiche di comportamento di una funzionalità.  
 I test devono essere automatici e verificare che il codice soddisfi le specifiche di output.
 
-\subsection*{To Do}
+\termdefinition{To Do}
 Sezione di un verbale o di un documento in cui si elencano le azioni concrete che ogni membro del gruppo deve svolgere.
 
 % ==============================
 \section{U}
 
-\subsection*{Utente}
+\termdefinition{Utente}
 La persona che usa e interagisce direttamente col sistema (spesso si identifica col committente).
 
-\subsection*{User story}
+\termdefinition{User story}
 Descrizione breve e informale di una funzionalità del sistema vista dal punto di vista dell’utente finale.  
 Riassume un’esigenza che l’utente vuole ottenere e perché.  
 L’utente lavora con il team per creare una \textbf{story card} che viene poi suddivisa in task.
@@ -352,20 +350,20 @@ L’utente lavora con il team per creare una \textbf{story card} che viene poi s
 % ==============================
 \section{V}
 
-\subsection*{Validazione}
+\termdefinition{Validazione}
 Attività eseguita al culmine del progetto per accertare che il prodotto finale corrisponda alle attese.
 
-\subsection*{Verifica}
+\termdefinition{Verifica}
 Attività eseguita durante lo sviluppo per accertare che le attività non introducano errori.
 
-\subsection*{Verbale}
+\termdefinition{Verbale}
 Documento riassuntivo di una riunione. Deve specificare Ordine del Giorno, Discussioni, Decisioni, Issue e To Do.  
 Ogni verbale deve essere verificato da un membro diverso da chi l’ha scritto.
 
 % ==============================
 \section{W}
 
-\subsection*{Way of working (WoW)}
+\termdefinition{Way of working / WoW}
 Comprende le metodologie di sviluppo (modello di sviluppo), la spartizione dei ruoli e delle attività, gli strumenti di lavoro (GitHub, GitLab, Trello, Jira, Slack, Discord, Obsidian, Google Docs), convenzioni standard e procedure condivise dai membri del team.
 
 \clearpage
