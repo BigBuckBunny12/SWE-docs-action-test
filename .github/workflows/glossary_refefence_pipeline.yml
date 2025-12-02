@@ -32,4 +32,4 @@ jobs:
         
         git add .
         git commit -m "Auto: Aggiornati termini glossario"
-        git push
+        git push || echo "Nessuna modifica rilevata"
