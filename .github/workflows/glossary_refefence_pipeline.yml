@@ -23,7 +23,7 @@ jobs:
     
     - name: Process LaTeX files
       run: |
-        python .github/scripts/apply_glossary_terms_style.py
+        python .github/scripts/add_glossary_references.py
     
     - name: Commit and push changes
       run: |
