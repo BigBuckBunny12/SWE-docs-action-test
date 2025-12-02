@@ -31,5 +31,5 @@ jobs:
         git config --local user.name "github-actions[bot]"
         
         git add .
-        git commit -m "Auto: Aggiornati termini glossario"
-        git push || echo "Nessuna modifica rilevata"
+        git commit -m "Auto: Aggiornati termini glossario" || echo "Nessuna modifica per il commit"
+        git push || echo "Nessuna modifica per il push"
