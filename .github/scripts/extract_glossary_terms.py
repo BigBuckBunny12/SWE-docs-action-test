@@ -13,7 +13,7 @@ matches = re.findall(regex, content)
 
 for match in matches:
     if '/' in match:
-        # Split per slash, trim degli spazi e rimozione stringhe vuote
+        # Split dei termini che hanno sinonimi, es: JavaScript / JS
         sub_terms = [term.strip() for term in match.split('/')]
         sub_terms = [term for term in sub_terms if term]
         terms.extend(sub_terms)
