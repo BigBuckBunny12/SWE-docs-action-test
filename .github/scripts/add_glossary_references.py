@@ -58,10 +58,72 @@ def wrap_terms(text: str, terms):
     """
     # Pattern da proteggere (non applicare \term dentro questi)
     protected_patterns = [
-        r'\\term\{[^}]*\}',             # \term{...}
-        r'\\href\{[^}]*\}',             # \href{url}{text}
-        r'\\url\{[^}]*\}',              # \url{...}
-        r'%.*?$',                       # % commento
+        r'\\term\{[^}]*\}',                          # \term{...} - già protetto
+        r'\\href\{[^}]*\}\{[^}]*\}',                 # \href{url}{text} - protezione completa
+        r'\\url\{[^}]*\}',                           # \url{...}
+        r'%.*?$',                                    # % commento
+        
+        # Label e riferimenti
+        r'\\label\{[^}]*\}',                         # \label{...}
+        r'\\ref\{[^}]*\}',                           # \ref{...}
+        r'\\pageref\{[^}]*\}',                       # \pageref{...}
+        r'\\nameref\{[^}]*\}',                       # \nameref{...}
+        r'\\autoref\{[^}]*\}',                       # \autoref{...}
+        r'\\eqref\{[^}]*\}',                         # \eqref{...}
+        
+        # File e path
+        r'\\includegraphics(?:\[[^\]]*\])?\{[^}]*\}', # \includegraphics[opzioni]{file}
+        r'\\input\{[^}]*\}',                         # \input{file}
+        r'\\include\{[^}]*\}',                       # \include{file}
+        r'\\graphicspath\{\{[^}]*\}\}',              # \graphicspath{{path}}
+        
+        # Definizioni di comandi
+        r'\\newcommand\{[^}]*\}(?:\[[^\]]*\])?\{[^}]*\}', # \newcommand{\cmd}[args]{def}
+        r'\\renewcommand\{[^}]*\}(?:\[[^\]]*\])?\{[^}]*\}', # \renewcommand
+        r'\\providecommand\{[^}]*\}(?:\[[^\]]*\])?\{[^}]*\}', # \providecommand
+        
+        # Bibliografia e citazioni
+        r'\\cite(?:\[[^\]]*\])?\{[^}]*\}',           # \cite[optional]{key}
+        r'\\bibitem(?:\[[^\]]*\])?\{[^}]*\}',        # \bibitem[label]{key}
+        r'\\bibliography\{[^}]*\}',                  # \bibliography{file}
+        
+        # Hyperref - link e riferimenti
+        r'\\hypertarget\{[^}]*\}\{[^}]*\}',          # \hypertarget{name}{text}
+        r'\\hyperlink\{[^}]*\}\{[^}]*\}',            # \hyperlink{name}{text}
+        r'\\hyperref\[[^\]]*\]\{[^}]*\}',            # \hyperref[label]{text}
+        r'\\hyperref\{[^}]*\}\{[^}]*\}\{[^}]*\}\{[^}]*\}', # \hyperref{url}{category}{name}{text}
+        
+        # Contatori
+        r'\\newcounter\{[^}]*\}',                    # \newcounter{name}
+        r'\\setcounter\{[^}]*\}\{[^}]*\}',           # \setcounter{counter}{value}
+        r'\\addtocounter\{[^}]*\}\{[^}]*\}',         # \addtocounter{counter}{value}
+        r'\\stepcounter\{[^}]*\}',                   # \stepcounter{counter}
+        r'\\refstepcounter\{[^}]*\}',                # \refstepcounter{counter}
+        r'\\value\{[^}]*\}',                         # \value{counter}
+        
+        # Ambienti
+        r'\\newenvironment\{[^}]*\}(?:\[[^\]]*\])?\{[^}]*\}\{[^}]*\}', # \newenvironment{name}[args]{begin}{end}
+        r'\\renewenvironment\{[^}]*\}(?:\[[^\]]*\])?\{[^}]*\}\{[^}]*\}', # \renewenvironment
+        
+        # Package e classi
+        r'\\usepackage(?:\[[^\]]*\])?\{[^}]*\}',     # \usepackage[options]{package}
+        r'\\RequirePackage(?:\[[^\]]*\])?\{[^}]*\}', # \RequirePackage[options]{package}
+        r'\\documentclass(?:\[[^\]]*\])?\{[^}]*\}',  # \documentclass[options]{class}
+        
+        # Index e glossary
+        r'\\index\{[^}]*\}',                         # \index{entry}
+        r'\\glossary\{[^}]*\}',                      # \glossary{entry}
+        
+        # Caption con argomento opzionale (solo la parte opzionale)
+        r'\\caption\[[^\]]*\]',                      # \caption[short] - protegge solo [short]
+        
+        # Tabelle di contenuti
+        r'\\addcontentsline\{[^}]*\}\{[^}]*\}\{[^}]*\}', # \addcontentsline{file}{sec}{text}
+        
+        # Lunghezze
+        r'\\setlength\{[^}]*\}\{[^}]*\}',            # \setlength{length}{value}
+        r'\\addtolength\{[^}]*\}\{[^}]*\}',          # \addtolength{length}{value}
+        r'\\newlength\{[^}]*\}',                     # \newlength{length}
     ]
     
     # Combina tutti i pattern in uno solo
