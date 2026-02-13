@@ -4,6 +4,7 @@ from pathlib import Path
 
 GLOSSARY_FILE = Path(".github/glossary_terms.json")
 TERM_DEF = r"\newcommand{\term}[1]{\textbf{#1}$^\mathbf{G}$}"
+IGNORE_GLOSSARY_DEF = r"\newcommand{\ignoreglossary}{}"
 
 def load_terms():
     with GLOSSARY_FILE.open("r", encoding="utf-8") as f:
@@ -35,6 +36,35 @@ def insert_term_command(text: str) -> str:
         return TERM_DEF + "\n\n" + text
 
 
+import re
+
+def insert_ignoreglossary_command(text: str) -> str:
+    """
+    Inserisce o sostituisce la definizione \\newcommand{\\ignoreglossary}{}.
+    - Se esiste già un \\newcommand{\\ignoreglossary}{...} lo rimpiazza.
+    - Se non esiste, lo inserisce nel preambolo (prima di \\begin{document}).
+    """
+
+    # Sostituzione del comando già presente
+    text = re.sub(
+        r"\\newcommand\s*\{\\ignoreglossary\}\s*\{[^}]*\}",
+        IGNORE_GLOSSARY_DEF.replace("\\", r"\\"),
+        text
+    )
+
+    # Se ora è presente, abbiamo finito
+    if IGNORE_GLOSSARY_DEF in text:
+        return text
+
+    # Inserimento nel preambolo
+    m = re.search(r"\\begin\{document\}", text)
+    if m:
+        return text[:m.start()] + IGNORE_GLOSSARY_DEF + "\n\n" + text[m.start():]
+    else:
+        return IGNORE_GLOSSARY_DEF + "\n\n" + text
+
+
+
 def remove_term_wrappers(text: str, terms_set):
     """
     Rimuove \term{X} quando X NON è nel glossario.
@@ -58,7 +88,9 @@ def wrap_terms(text: str, terms):
     """
     # Pattern da proteggere (non applicare \term dentro questi)
     protected_patterns = [
-        r'\\term\{[^}]*\}',                          # \term{...} - già protetto
+        r'\\ignoreglossary\{[^}]*\}'                 # comando custom per ignorare l'applicazione di \term
+        r'\\texttt\{[^}]*\}'                         # per evitare problemi con sezioni di "codice"
+        r'\\term\{[^}]*\}',                          # \term{...}
         r'\\href\{[^}]*\}\{[^}]*\}',                 # \href{url}{text} - protezione completa
         r'\\url\{[^}]*\}',                           # \url{...}
         r'%.*?$',                                    # % commento
