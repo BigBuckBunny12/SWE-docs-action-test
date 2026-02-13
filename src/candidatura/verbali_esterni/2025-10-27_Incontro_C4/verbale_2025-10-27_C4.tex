@@ -20,14 +20,12 @@
 % ===== Stile intestazione =====
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\textcolor{gray}{\term{Verbale} Riunione - Gruppo 17}}
+\fancyhead[L]{\textcolor{gray}{Verbale Riunione - Gruppo 17}}
 \fancyfoot[C]{\thepage}
 
 % ===== Formattazione sezioni =====
 \titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
-
-\newcommand{\term}[1]{\textbf{#1}$^\mathbf{G}$}
 
 \begin{document}
 
@@ -72,7 +70,7 @@
 \vspace{1.5cm}
 
 \begin{center}
-    {\LARGE \textbf{\term{Verbale} Riunione Numero 3}}
+    {\LARGE \textbf{Verbale Riunione Numero 3}}
 \end{center}
 
 \vspace*{\fill} % --- Spinge verso l’alto la fine del contenuto, centrando tutto il blocco
@@ -137,15 +135,15 @@
 Durante la chiamata conoscitiva con Emanuele Righetto e Arianna Bellino, referenti per il progetto “L’app che Protegge e Trasforma” di Miriade, sono stati affrontati diversi temi relativi alla progettazione, alla gestione dei dati e alla sicurezza dell’applicazione.
 
 \subsection{Gestione dei dati e tutela della privacy}
-È stato chiarito che tutte le interazioni tra \term{Utente} e applicazione, in linea teorica, dovrebbero essere tracciate e memorizzate nella banca dati.  
-Esempi includono le domande poste dall’\term{Utente} all’intelligenza artificiale e le relative risposte. Tuttavia, è necessario prestare particolare attenzione al trattamento dei dati personali: in linea di massima sarebbe meglio non raccogliere dati riconducibili a un singolo individuo, in modo da tutelare la privacy.  
+È stato chiarito che tutte le interazioni tra utente e applicazione, in linea teorica, dovrebbero essere tracciate e memorizzate nella banca dati.  
+Esempi includono le domande poste dall’utente all’intelligenza artificiale e le relative risposte. Tuttavia, è necessario prestare particolare attenzione al trattamento dei dati personali: in linea di massima sarebbe meglio non raccogliere dati riconducibili a un singolo individuo, in modo da tutelare la privacy.  
 Le informazioni registrate verranno utilizzate per migliorare le prestazioni dell’app, ad esempio fornendo risposte più rapide a richieste già effettuate.
 
 \subsection{Ambito di distribuzione dell’applicazione}
 Alla domanda relativa alla diffusione dell’app oltre il territorio nazionale, è stato specificato che, almeno nella fase iniziale, lo sviluppo e la distribuzione avverranno esclusivamente in Italia, al fine di rispettare la normativa vigente e semplificare la gestione legale.
 
 \subsection{Tracciamento dei percorsi sicuri e progettazione funzionale}
-Il gruppo ha chiesto chiarimenti sulla gestione dei percorsi sicuri. Non è stata fornita una risposta definitiva sulla necessità di memorizzarli in un \term{Database} o recuperarli da fonti esterne.  
+Il gruppo ha chiesto chiarimenti sulla gestione dei percorsi sicuri. Non è stata fornita una risposta definitiva sulla necessità di memorizzarli in un database o recuperarli da fonti esterne.  
 È stato comunque sottolineato che non tutte le funzionalità richieste sono vincolanti: il gruppo è invitato a proporre soluzioni personali sia dal punto di vista tecnico che di design, contribuendo attivamente alla progettazione funzionale dell’app.
 
 \subsection{Rilevamento passivo di situazioni di pericolo}
@@ -162,7 +160,7 @@ L’intelligenza artificiale non deve mai avere l’ultima parola: la decisione 
 
 \subsection{Gestione di assenza di connessione e campo}
 È stato affrontato il problema dell’utilizzo dell’app in condizioni di assenza di rete o di segnale telefonico.  
-In tali situazioni l’app risulterebbe in gran parte inutilizzabile; pertanto, il design dovrà tenere conto dello stato del dispositivo e dell’ambiente in cui si trova l’\term{Utente}.
+In tali situazioni l’app risulterebbe in gran parte inutilizzabile; pertanto, il design dovrà tenere conto dello stato del dispositivo e dell’ambiente in cui si trova l’utente.
 
 \subsection{Disinstallazione e sicurezza dell’app}
 Si è discusso sulla possibilità di distinguere tra una disinstallazione normale e una forzata.  
@@ -177,7 +175,7 @@ In relazione alle funzionalità con implicazioni legislative o psicologiche, è 
 Sarà sufficiente produrre build di test per piattaforme come TestFlight (iOS) o Android, così da consentire prove su dispositivi reali.
 
 \subsection{Utilizzo dell’intelligenza artificiale}
-L’azienda mette a disposizione le \term{Api} di \textbf{Amazon Bedrock} per l’integrazione dell’intelligenza artificiale.  
+L’azienda mette a disposizione le API di \textbf{Amazon Bedrock} per l’integrazione dell’intelligenza artificiale.  
 I costi relativi all’uso dei token non rappresentano una criticità.
 
 % ---------- DECISIONI ----------
@@ -186,9 +184,9 @@ I costi relativi all’uso dei token non rappresentano una criticità.
     \item N.A.
 \end{itemize}
 
-% ---------- \term{To Do} ----------
-\section{\term{To Do}}
-Dalle discussioni e decisioni intraprese non sono sorte \term{Task} immediate.
+% ---------- TO DO ----------
+\section{To Do}
+Dalle discussioni e decisioni intraprese non sono sorte task immediate.
 
 % ---------- REDAZIONE E REVISIONE ----------
 \clearpage
@@ -204,16 +202,18 @@ Dalle discussioni e decisioni intraprese non sono sorte \term{Task} immediate.
 \textbf{Versione} & \textbf{Ruolo} & \textbf{Nome} & \textbf{Data e ora} & \textbf{Descrizione} \\
 \hline
 \rowcolor{white}
-1.0.0 & Redatto da & Gabriele Scaggiante & 2025-10-27 & Stesura iniziale del \term{Verbale} \\
+1.0.0 & Redatto da & Gabriele Scaggiante & 2025-10-27 & Stesura iniziale del verbale \\
 \hline
 \rowcolor{gray!20}
-1.0.0 & Revisione & Giovanni Visentin & 2025-10-28 & Controllo approfondito del \term{Verbale} \\
+1.0.0 & Revisione & Giovanni Visentin & 2025-10-28 & Controllo approfondito del verbale \\
 \hline
 \rowcolor{white}
-1.0.0 & Conferma & Tutti i membri & 2025-10-29 & Conferma da parte di tutti del \term{Verbale} \\
+1.0.0 & Conferma & Tutti i membri & 2025-10-29 & Conferma da parte di tutti del verbale \\
 \hline
 
 \end{tabular}
 \end{center}
+
+\input{../spazio_firma.tex}
 
 \end{document}
