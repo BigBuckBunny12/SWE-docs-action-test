@@ -20,12 +20,14 @@
 % ===== Stile intestazione =====
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\textcolor{gray}{Verbale Riunione - Gruppo 17}}
+\fancyhead[L]{\textcolor{gray}{\term{Verbale} Riunione - Gruppo 17}}
 \fancyfoot[C]{\thepage}
 
 % ===== Formattazione sezioni =====
 \titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
+
+\newcommand{\term}[1]{\textbf{#1}$^\mathbf{G}$}
 
 \begin{document}
 
@@ -70,7 +72,7 @@
 \vspace{1.5cm}
 
 \begin{center}
-    {\LARGE \textbf{Verbale Riunione Interna}}
+    {\LARGE \textbf{\term{Verbale} Riunione Interna}}
 \end{center}
 
 \vspace*{\fill} % --- Spinge verso l’alto la fine del contenuto, centrando tutto il blocco
@@ -130,14 +132,14 @@
 Durante la riunione interna, i membri del gruppo hanno discusso in merito alla scelta del progetto da realizzare, analizzando preferenze personali, complessità tecniche e disponibilità dei referenti.
 
 \subsection{Preferenze dei membri}
-Ciascun componente ha espresso la propria preferenza tra i progetti proposti:
+Ciascun \term{Componente} ha espresso la propria preferenza tra i progetti proposti:
 \begin{itemize}
     \item \textbf{Riccardo} e \textbf{Giovanni} hanno manifestato interesse per il progetto \textbf{C4}, principalmente per l’aspetto legato al design, all’accessibilità e alla possibilità di sviluppare un’applicazione mobile.
     \item \textbf{Gabriele}, \textbf{Dennis} e \textbf{Ferdinando} preferiscono il progetto \textbf{C8}, considerandolo più gestibile e vicino alle competenze già acquisite, pur trattando argomenti rilevanti e utili alla formazione.
 \end{itemize}
 Chi ha espresso preferenza per il C8 ha evidenziato che il C4 presenta una maggiore complessità tecnica e richiederebbe un impegno più elevato in termini di tempo e risorse.  
 \\
-Il capitolato n.6 per il momento è stato escluso: tutti i partecipanti alla riunione esterna hanno infatti espresso opinioni negative in merito alla direzione presa dal progetto, che sembrava più interessante prima dell'incontro. Anche il referente non ha dato un'impressione positiva.
+Il \term{Capitolato} n.6 per il momento è stato escluso: tutti i partecipanti alla riunione esterna hanno infatti espresso opinioni negative in merito alla direzione presa dal progetto, che sembrava più interessante prima dell'incontro. Anche il referente non ha dato un'impressione positiva.
 
 \subsection{Considerazioni sui progetti C4 e C8}
 È stato osservato che il progetto C8 risulta già assegnato, perciò la scelta potrebbe comportare difficoltà nel processo di selezione.  
@@ -158,7 +160,7 @@ Per la realizzazione del progetto C4 sarebbero necessarie competenze e attività
 \begin{itemize}
     \item Linguaggi e framework: \textbf{Flutter} e \textbf{Dart};
     \item Design dell’applicazione (UX, funzionalità, onboarding) — stimato in circa due settimane di lavoro;
-    \item Infrastruttura e servizi cloud: \textbf{AWS} (Amazon Bedrock, database SQL e NoSQL);
+    \item Infrastruttura e servizi cloud: \textbf{AWS} (Amazon Bedrock, \term{Database} SQL e NoSQL);
     \item Contenimento e distribuzione: \textbf{Docker};
     \item Aspetti legali: conformità \textbf{GDPR} e diritto all’oblio;
     \item Interazioni con il dispositivo (notifiche, microfono, accesso tramite password, ecc.).
@@ -175,8 +177,8 @@ Gabriele ha espresso preoccupazione riguardo al rischio di iniziare il progetto 
 Al termine della discussione, non è stata ancora presa una decisione definitiva sul progetto da scegliere.  
 Il gruppo intende contattare il \textbf{Professor Vardanega} per un confronto e predisporre una lista di domande da presentare in data \textbf{giovedì 30 ottobre 2025}.
 
-% ---------- TO DO ----------
-\section{To Do}
+% ---------- \term{To Do} ----------
+\section{\term{To Do}}
 Annotare una breve lista di domande da porre al Professor Vardanega.
 
 % ---------- REDAZIONE E REVISIONE ----------
@@ -193,7 +195,7 @@ Annotare una breve lista di domande da porre al Professor Vardanega.
 \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Descrizione} & \textbf{Verificatore} \\
 \hline
 \rowcolor{white}
-1.0.0 & 2025-10-28 & Gabriele Scaggiante & Stesura iniziale del verbale & Dennis Parolin \\
+1.0.0 & 2025-10-28 & Gabriele Scaggiante & Stesura iniziale del \term{Verbale} & Dennis Parolin \\
 \hline
 
 \end{tabular}
