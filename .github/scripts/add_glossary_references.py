@@ -64,6 +64,12 @@ def insert_ignoreglossary_command(text: str) -> str:
         return IGNORE_GLOSSARY_DEF + "\n\n" + text
 
 
+def remove_all_term_wrappers(text: str) -> str:
+    """
+    Rimuove tutti i comandi \\term{X}, sostituendoli con X.
+    """
+    pattern = re.compile(r"\\term\{([^}]*)\}")
+    return pattern.sub(r"\1", text)
 
 def remove_term_wrappers(text: str, terms_set):
     """
@@ -191,9 +197,9 @@ def main():
         original = path.read_text(encoding="utf-8")
         text = original
 
+        text = remove_all_term_wrappers(text)
         text = insert_term_command(text)
         text = insert_ignoreglossary_command(text)
-        text = remove_term_wrappers(text, terms_set)
         text = wrap_terms(text, terms)
 
         if text != original:
