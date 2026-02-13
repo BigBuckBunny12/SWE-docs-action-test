@@ -88,8 +88,8 @@ def wrap_terms(text: str, terms):
     """
     # Pattern da proteggere (non applicare \term dentro questi)
     protected_patterns = [
-        r'\\ignoreglossary\{[^}]*\}'                 # comando custom per ignorare l'applicazione di \term
-        r'\\texttt\{[^}]*\}'                         # per evitare problemi con sezioni di "codice"
+        r'\\ignoreglossary\{[^}]*\}',                 # comando custom per ignorare l'applicazione di \term
+        r'\\texttt\{[^}]*\}',                         # per evitare problemi con sezioni di "codice"
         r'\\term\{[^}]*\}',                          # \term{...}
         r'\\href\{[^}]*\}\{[^}]*\}',                 # \href{url}{text} - protezione completa
         r'\\url\{[^}]*\}',                           # \url{...}
@@ -192,6 +192,7 @@ def main():
         text = original
 
         text = insert_term_command(text)
+        text = insert_ignoreglossary_command(text)
         text = remove_term_wrappers(text, terms_set)
         text = wrap_terms(text, terms)
 
